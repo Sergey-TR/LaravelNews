@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="title">
-        {{ __('LaravelNews - AllNews') }}
+        {{ __('LaravelNewsAllNews') }}
     </x-slot>
     <x-slot name="header">
         <x-headers.header_h2>

@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\News;
+use Database\Factories\CategoryFactory;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+
     public function index()
     {
         $categories = Category::all();
@@ -23,4 +26,6 @@ class CategoryController extends Controller
     {
         return $this->index();
     }
+
+
 }

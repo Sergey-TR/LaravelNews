@@ -21,7 +21,11 @@
                     <x-nav-link :href="route('categories.index')" :active="request()->routeIs('categories.*')">
                         {{ __('Categories') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('about.index')" :active="request()->routeIs('about.*')">
+                        {{ __('About') }}
+                    </x-nav-link>
                 </div>
+
             </div>
 
             <!-- Settings Dropdown -->
@@ -50,6 +54,14 @@
                                 {{ __('Log out') }}
                             </x-dropdown-link>
                         </form>
+
+                    </x-slot>
+                    <x-slot name="create">
+                        <x-dropdown-link>
+                            <x-dropdown-create :href="route('news.create')" :active="request()->routeIs('news.*')">
+                                {{ __('Create news') }}
+                            </x-dropdown-create>
+                        </x-dropdown-link>
                     </x-slot>
                 </x-dropdown>
             </div>
@@ -70,7 +82,18 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                {{ __('Home') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('categories.index')" :active="request()->routeIs('categories.*')">
+                {{ __('Categories') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('news.index')" :active="request()->routeIs('news.*')">
+                {{ __('News') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('about.index')" :active="request()->routeIs('about.*')">
+                {{ __('About') }}
             </x-responsive-nav-link>
         </div>
 
@@ -88,7 +111,6 @@
                     <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
                 </div>
             </div>
-
             <div class="mt-3 space-y-1">
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
@@ -100,6 +122,7 @@
                         {{ __('Log out') }}
                     </x-responsive-nav-link>
                 </form>
+
             </div>
         </div>
     </div>

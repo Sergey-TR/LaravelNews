@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AboutController extends Controller
 {
-    public function about()
+    public function index()
     {
-        return view('about');
+        return view('about.index');
     }
 }
